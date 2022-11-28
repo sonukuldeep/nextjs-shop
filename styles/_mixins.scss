@@ -1,0 +1,15 @@
+@mixin desktop() {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin clamp-font($min,$max) {
+    font-size: clamp($min, -0.875rem + 8.333vw, $max);
+}
+
+@mixin prevent-selection () {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
