@@ -13,11 +13,13 @@ body {
 }
 
 body {
-  background: url('../public/bg.jpg'),rgba(125,70,127,0.85);
-  background-repeat: no-repeat no-repeat;
+  /* background: url('../public/bg.jpg'),rgba(125,70,127,0.85); */
+  /* background-repeat: no-repeat no-repeat;
   background-size: cover;
-  background-blend-mode: color-dodge;
-  color: #fff;
+  background-blend-mode: color-dodge; */
+  color: #333;
+  /* font-family: 'Poppins', sans-serif; */
+  /* letter-spacing: 1px; */
 }
 
 a {

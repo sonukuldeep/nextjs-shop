@@ -1,0 +1,60 @@
+@import "mixins";
+
+$bg-color: #333;
+$best-seller-bg: rgb(230, 168, 54);
+$best-seller-bg-light: rgba(230, 168, 54, 0.5);
+
+.container {
+    color: #333;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    gap: 5px;
+    margin: 5px;
+    position: relative;
+    width: 98.5vw;
+    .card {
+        padding: 5px;
+        position: relative;
+        border: 1px solid #333;
+        overflow: hidden;
+        
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: $best-seller-bg;
+            width: 30px;
+            color: white;
+            z-index: 1;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        span:last-child {
+            top: auto;
+            bottom: 0;
+            left: 50%;
+            width: 100%;
+            transform: translateX(-50%);
+            @include clamp-font(12px, 1rem);
+            text-shadow: 0 0 2px #333;
+            text-transform: capitalize;
+            padding: 0 5px;
+            margin: 0;
+            background-color: $best-seller-bg;
+        }
+
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+}
+
+@include desktop() {
+    .container {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+
+    }
+}

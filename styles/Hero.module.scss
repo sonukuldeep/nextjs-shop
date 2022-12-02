@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import "mixins";
+
+$width: 600px;
+$width_: 450px;
+$number-of-images: 10;
+
+.container {
+  width: 98.5vw; // right spacing
+  overflow: hidden;
+  height: 444px; /* bottom spacing*/
+ 
+}
+
+.mediaScroller {
+  display: block;
+  max-height: 99vw;
+  transform-origin: right top;
+  overflow-x: hidden;
+  transform: rotate(-90deg) translateY(-500px); /* left adjustment*/
+  width: 504px; /*top spacing*/
+  
+}
+
+.mediaElement {
+  transform: rotate(90deg);
+  padding: 5rem 0; /* control image spacing from here*/
+  width: 560px; /*image height*/
+}
+
+.mediaElement>img {
+  inline-size: 100%;
+  object-fit: cover;
+  // border: 1px solid #333;
+  box-shadow: 0 0 10px 2px #333;
+  border-radius: 8px;
+}
+
+.snapsInline {
+  scroll-snap-type: block mandatory;
+  scroll-padding-inline: 0.3rem;
+}
+
+.snapsInline>* {
+  scroll-snap-align: start;
+}
+
+.mediaScroller {
+  -ms-overflow-style: none;
+  /* disable scroll for chrome*/
+  scrollbar-width: none;
+}
+
+.mediaScroller::-webkit-scrollbar {
+  /* disable scroll for firefox*/
+  display: none;
+}
+
+@include desktop() {
+  .container {
+    height: 74vw;
+    margin-top: 5px
+  }
+
+  .mediaScroller {
+    width: 85vw;
+    transform: rotate(-90deg) translateY(-84vw);/* left adjustment*/
+  }
+
+  .mediaElement {
+    width: 96vw;
+    padding: 3rem 0;/* control image spacing from here*/
+  }
+  .mediaElement > img {
+    box-shadow: none;
+    border: 1px solid #333;
+  }
+}
+
+@media (width > 410px) and (width < 768px) {
+  .mediaElement {
+    padding: 5rem 0;/* control image spacing from here*/
+  } 
+}
+
+.p {
+  font-family: 'Poppins', sans-serif;
+  @include clamp-font(1rem, 4rem);
+  text-transform: uppercase;
+  color: #333;
+  text-align: center;
+
+}

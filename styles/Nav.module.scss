@@ -2,17 +2,36 @@
 
 $theme-text-color: rgba(255, 255, 255, 0.7);
 $theme-text-color-dull: rgba(255, 255, 255, 1);
+$nav-color1: #77b5f8;
+$nav-color2: #fdf8cb;
 
 .nav {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-image: url('../public/3304482-2.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    // background-image: url('../public/3304482-2.jpg');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    position: relative;
     color: #fff;
     box-shadow: 0 2px 10px 2px #333;
+    height: 45px;
+    // width: 100vw;
+    // overflow-x: hidden;
     @include prevent-selection;
+
+    &::before {
+        content: "";
+        width: 45px;
+        height: 100vw;
+        position: absolute;
+        background: linear-gradient($nav-color1,$nav-color2);
+        display: block;
+        rotate: 90deg;
+        z-index: -2;
+    }
+
+
     
     ul {
         list-style: none;
@@ -22,7 +41,7 @@ $theme-text-color-dull: rgba(255, 255, 255, 1);
         display: none;
     }
 
-    ul:first-child {
+    & > ul:first-child {
         
         li a {
             display: flex;
@@ -35,7 +54,7 @@ $theme-text-color-dull: rgba(255, 255, 255, 1);
         }
     }
 
-    ul:last-child {
+    & > ul:last-child {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -43,36 +62,71 @@ $theme-text-color-dull: rgba(255, 255, 255, 1);
         li {
             padding: 5px;
             font-weight: 600;
+            z-index: 2;
             @include clamp-font(1rem,1.2rem)
         }
         li:nth-child(odd) {
             color: $theme-text-color-dull;
+            text-shadow: 0 0 2px rgba(51, 51, 51, 0.6);
+
         }
         li:nth-child(odd):hover {
-            color: $theme-text-color;
+            color: $theme-text-color-dull;
+            text-shadow: none;
+
         }
     }
     
     @include desktop() {
+        position: relative;
+        height: 60px;
+
         div {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            position: relative;
 
             svg {
                 width: 30px;
             }
 
-            li {
+            ul {
+                display: none;
+            }
+
+            ul.active {
                 position: absolute;
-                display: block;
-                
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                padding: 5px;
+                width: 100vw;
+                height: 200px;
+                background-color: rgba(0, 0, 0, 0.5);
+                font-weight: 800;
+                z-index: 2;
             }
         }
-        ul:last-child {
+        & > ul:last-child {
             display: none;
+        }
+
+        &::before {
+            content: "";
+            width: 60px;
+            height: 100vw;
+        }
+    }
+    @media (width > 768px) {
+        & {
+            overflow-x: hidden;
+
         }
     }
 }
+
+// .active {
+//     letter-spacing: 2px;
+// }
