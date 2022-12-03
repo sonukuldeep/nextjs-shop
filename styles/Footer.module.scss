@@ -18,8 +18,10 @@
         align-items: center;
         list-style: none;
         text-transform: capitalize;
-
-
+        
+        ul{
+            list-style: none;
+        }
         &>li:last-child {
             display: flex;
             align-items: center;
@@ -27,8 +29,6 @@
             flex-direction: column;
 
             ul {
-
-                list-style: none;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -44,5 +44,4 @@
             }
         }
     }
-
 }
