@@ -1,4 +1,9 @@
 @import "mixins";
+@font-face {
+  font-family: greatly-demo ital;
+  src: url(/Greatly_demo);
+  font-style: italic;
+}
 
 $font-color: white;
 $bg-color: #057788;
@@ -19,18 +24,23 @@ $bg-color: lightblue;
 }
 
 .h1 {
-  font-family: 'Poppins', sans-serif;
-  color: $font-color;
+  font-family: Greatly_demo;
+  font-style: italic;
+  color: #deeab1;
+  // color: $font-color;
   text-transform: uppercase;
   @include clamp-font(2rem,3rem);
   // border-radius: 8px;
-  text-shadow: 0 0 1px #fff;
+  text-shadow: 5px 5px 0px rgb(0, 0, 0);
   padding: 5px 40px;
   margin-top: 10px;
   position: relative;
-  background-color: $bg-color;
+  // background-color: $bg-color;
   text-align: center;
   // overflow: hidden;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .h3 {

@@ -1,0 +1,73 @@
+.container {
+    background-image: url('/happy-christmas-tree.gif');
+    background-size: cover;
+    background-color: #333; /*place background image here*/
+  }
+  
+  .carousel {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* should be set in the img element directly */
+    height: 100%;
+    /* should be set in the img element directly */
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .carousel .carousel__track_container {
+    /* position: relative; */
+    height: 100%;
+    width: 100vw;
+    /*width: 99vw; width of container that hides all slides behind */
+    overflow: hidden;
+  }
+  
+  .carousel__track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transition: transform 0.5s ease-out;
+    display: flex;
+  }
+  
+  .carousel .carousel__slide {
+    /* position: absolute; */
+    /* position: relative; */
+    /* width: 100%; */
+  }
+  
+  .carousel .carousel_img {
+    width: 99vw;
+    /* height: auto; */
+    object-fit: cover;
+  }
+  
+  .carousel__nav {
+    /* display: flex;
+      justify-content: center; */
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .carousel .carousel__indicator {
+    border: none;
+    border-radius: 50%;
+    width: 1.5vw;
+    height: 1.5vw;
+    margin: 0 12px;
+  }
+  
+  .carousel .carousel__indicator.current_slide {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid white;
+  }
+  
+  @media(width < 768px) {
+    .carousel .carousel__indicator {
+      width: 3.5vw;
+      height: 3.5vw;
+    }
+  }

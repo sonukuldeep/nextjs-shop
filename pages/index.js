@@ -1,6 +1,6 @@
 import style from '../styles/Home.module.scss'
 import Link from 'next/link'
-import Hero from '../Components/Hero'
+import HeroStyled from '../Components/HeroStyled'
 import Cards from '../Components/Cards'
 
 export default function Home({spareParts, bestseller,custompcandrepair,antivirus}) {
@@ -10,7 +10,7 @@ export default function Home({spareParts, bestseller,custompcandrepair,antivirus
     <div >
       <main className={style.main} >
         <h1 className={style.h1}>{welcomeText}</h1>
-        <Hero />
+        <HeroStyled />
         <h3 className={style.h3}>Best sellers in Accessories</h3>
         <Cards cardsToDisplay={bestseller} showRank={true} />
         <h3 className={style.h3}>Custom PC Built and Repair</h3>
