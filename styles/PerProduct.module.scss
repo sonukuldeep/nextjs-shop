@@ -1,8 +1,9 @@
 $text-bg-color: #87ceeb;
+
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 .cards {
@@ -10,10 +11,9 @@ $text-bg-color: #87ceeb;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
-
     box-shadow: 0 0 10px 2px #333;
     padding: 5px;
-    // border-radius: 8px;
+    margin-bottom: 30px;
 }
 
 .title {
@@ -25,15 +25,39 @@ $text-bg-color: #87ceeb;
 }
 
 .feature {
-    width: 50%;
-    margin-top: 5%;
+    width: 90%;
+    margin-top: 40px;
+}
+
+.h1 {
+    font-size: larger;
+    font-weight: 700;
+    color: #fff;
+    padding: 5px;
+    margin: 40px auto 20px auto;
+    // width: fit-content;
+    text-transform: capitalize;
+    background-color: $text-bg-color;
+    text-align: center;
+}
+
+.image_container {
+
+}
+
+.flex_center_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (width < 768px) {
     .container {
+        display: flex;
         flex-direction: column;
         align-items: center;
     }
+
     .feature {
         width: 80%;
         margin-top: 5%;

@@ -7,12 +7,17 @@ const product = ({ data }) => {
     // const {id} = router.query  //hence not needed in this case since i'm already uning getServerSideProps 
 
     return <div className={style.container}>
-        <div><img src={data.img} /></div>
+        <div className={style.image_container}>
+            <h1 className={style.h1}>{data.excerpt}</h1>
+            <div className={style.flex_center_center}><img src={data.img} /></div>
+        </div>
         <div className={style.feature}>
-            <div className={style.cards}>
-                <div className={style.title}>{data.desc[0].title}</div>
-                <p className={style.desc}>{data.desc[0].desc}</p>
-            </div>
+            {data.desc.map((desc, index) => {
+                return (<div key={index} className={style.cards}>
+                    <div className={style.title}>{desc.title}</div>
+                    <p className={style.desc}>{desc.desc}</p>
+                </div>)
+            })}
         </div>
     </div>
     // return <div>"hey"</div>
