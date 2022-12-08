@@ -3,6 +3,32 @@
 $bg-color: #333;
 $best-seller-bg: rgb(230, 168, 54);
 $best-seller-bg-light: rgba(230, 168, 54, 0.5);
+$bg-color: #add8e6;
+
+.bigContainer {
+    display: flex;
+}
+
+.bigContainer_reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.plankCard {
+    width: 49vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+    font-family: 'Poppins', sans-serif;
+    @include clamp-font(12px, 1.2rem);
+    font-weight: 600;
+    color: #fff;
+    background-color: $best-seller-bg;
+    margin: 5px 0;
+    text-align: center;
+}
 
 .container {
     color: #333;
@@ -12,12 +38,13 @@ $best-seller-bg-light: rgba(230, 168, 54, 0.5);
     margin: 5px;
     position: relative;
     width: 98.5vw;
+
     .card {
         padding: 5px;
         position: relative;
         border: 1px solid #333;
         overflow: hidden;
-        
+
         span {
             position: absolute;
             top: 0;
@@ -49,12 +76,81 @@ $best-seller-bg-light: rgba(230, 168, 54, 0.5);
             object-fit: contain;
         }
     }
+}
 
+.smallContainer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    grid-template-rows: 20vw 20vw;
+    gap: 5px;
+    margin: 5px;
+    position: relative;
+    width: 49.2vw;
+
+    .card {
+        padding: 5px;
+        position: relative;
+        border: 1px solid #333;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: $best-seller-bg;
+            width: 30px;
+            color: white;
+            z-index: 1;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        span:last-child {
+            top: auto;
+            bottom: 0;
+            left: 50%;
+            width: 100%;
+            transform: translateX(-50%);
+            @include clamp-font(12px, 1rem);
+            text-shadow: 0 0 2px #333;
+            text-transform: capitalize;
+            padding: 0 5px;
+            margin: 0;
+            background-color: $best-seller-bg;
+        }
+
+        img {
+            width: 70%;
+            object-fit: contain;
+            align-self: center;
+        }
+    }
 }
 
 @include desktop() {
     .container {
         grid-template-columns: repeat(2, minmax(150px, 1fr));
+        .card span:last-child {
+            
+            @include clamp-font(12px, 0.8rem);
+            
+        }
+    }
 
+    .smallContainer {
+        grid-template-columns: repeat(1, minmax(150px, 1fr));
+        .card span:last-child {
+            
+            @include clamp-font(12px, 0.8rem);
+            
+        }
+        .card img {
+            width: 50%;
+        }
+    }
+    .plankCard {
+            @include clamp-font(12px, 0.8rem);
     }
 }

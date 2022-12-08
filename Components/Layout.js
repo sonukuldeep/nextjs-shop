@@ -10,6 +10,7 @@ const Layout = ({ children }) => {
                 <title>Bios Computer</title>
                 <meta name="keywords" content="computer shop, online computer shop, computer service center, laptop repair, computer repair" />
                 <link rel="icon" href="/favicon-16x16.png" />
+                <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'></link>
             </Head>
             <Nav />
             {children}

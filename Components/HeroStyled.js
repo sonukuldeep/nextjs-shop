@@ -24,7 +24,7 @@ function HeroStyled() {
 
   useEffect(() => {
     if (nextSlide > numberOfSlides -2) {
-      posOrNeg.current.posOrNeg = -1
+      posOrNeg.current.posOrNeg = -(numberOfSlides -1)
     }
     if (nextSlide < 1) {
       posOrNeg.current.posOrNeg = 1

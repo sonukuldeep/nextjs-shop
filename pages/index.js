@@ -14,9 +14,9 @@ export default function Home({spareParts, bestseller,custompcandrepair,antivirus
         <h3 className={style.h3}>Best sellers in Accessories</h3>
         <Cards cardsToDisplay={bestseller} showRank={true} />
         <h3 className={style.h3}>Custom PC Built and Repair</h3>
-        <Cards cardsToDisplay={custompcandrepair} />
+        <Cards cardsToDisplay={custompcandrepair} smallSquare={true} order={1}/>
         <h3 className={style.h3}>Protect your PC against Malware and Virus</h3>
-        <Cards cardsToDisplay={antivirus} />
+        <Cards cardsToDisplay={antivirus} smallSquare={true} order={2}/>
         <h3 className={style.h3}>Replacement Spare Parts</h3>
         <Cards cardsToDisplay={spareParts} />
       </main>
