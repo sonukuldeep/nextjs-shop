@@ -33,8 +33,8 @@ const Nav = () => {
         <li>Categories</li>
         <li>|</li>
         <li><Link href='/blog'>Tech Blog</Link></li>
-        <li>|</li>
-        <li>Login</li>
+        {/* <li>|</li>
+        <li>Login</li> */}
         <li>|</li>
         <li><Link href='/contact'>Contact</Link></li>
       </ul>
