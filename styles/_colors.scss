@@ -1,0 +1,25 @@
+@use 'sass:list';
+
+$primary-bg: #8BBEEE;
+// $primary-bg: #add8e6;
+$secondary-bg: #93D1EB;
+// $secondary-bg: rgb(230, 168, 54);
+$best-seller-bg-light: rgba(230, 168, 54, 0.5);
+$non-white-font-color: #deeab1;
+$white-font-color: #fff;
+$theme-text-color: #87ceeb;
+
+@mixin color-scheme($text, $bg) {
+
+    // if we have a single bg color, then set a background-color
+    // and if we have multiple bg colors, set a gradient
+    @if list.length($bg)==1 {
+        background-color: $bg;
+    }
+
+    @else {
+        background-image: linear-gradient(to top left, $bg);
+    }
+
+    color: $text;
+}

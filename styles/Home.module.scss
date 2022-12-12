@@ -1,13 +1,15 @@
-@import "mixins";
+@use "./mixins" as *;
+@use "./colors" as *;
+
 @font-face {
   font-family: greatly-demo ital;
   src: url(/Greatly_demo);
   font-style: italic;
 }
 
-$font-color: white;
-$bg-color: #057788;
-$bg-color: lightblue;
+// $font-color: white;
+// $primary-bg: #057788;
+// $primary-bg: lightblue;
 
 .container {
   padding: 0 2rem;
@@ -26,7 +28,7 @@ $bg-color: lightblue;
 .h1 {
   font-family: Greatly_demo;
   font-style: italic;
-  color: #deeab1;
+  color: $non-white-font-color;
   // color: $font-color;
   text-transform: uppercase;
   @include clamp-font(2rem,3rem);
@@ -35,7 +37,7 @@ $bg-color: lightblue;
   padding: 5px 40px;
   margin-top: 10px;
   position: relative;
-  // background-color: $bg-color;
+  // background-color: $primary-bg;
   text-align: center;
   // overflow: hidden;
   position: absolute;
@@ -47,7 +49,7 @@ $bg-color: lightblue;
   text-align: center;
   padding-top: 5px;
   padding-bottom: 10px;
-  background-color: $bg-color;
-  color: $font-color;
+  background-color: $primary-bg;
+  color: $white-font-color;
   border: 1px solid #333;
 }

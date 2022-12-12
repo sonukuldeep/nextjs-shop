@@ -1,10 +1,12 @@
-@import "mixins";
+@use "./mixins" as *;
+@use "./colors" as *;
 
 $theme-text-color: rgba(255, 255, 255, 0.7);
 $theme-text-color-dull: rgba(255, 255, 255, 1);
 $nav-color1: #77b5f8;
 $nav-color2: #fdf8cb;
 $nav-color: skyblue;
+$nav-color: $primary-bg;
 .nav {
     display: flex;
     justify-content: space-evenly;

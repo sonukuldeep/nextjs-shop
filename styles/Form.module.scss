@@ -1,0 +1,110 @@
+@use "./mixins" as *;
+@use "./colors" as *;
+
+.container {
+    margin: 5px;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    color: $secondary-bg;
+
+    @include desktop() {
+        grid-template-columns: 1fr;
+    }
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    // margin-right: 80px;
+    margin: 10px 80px 10px 10px;
+
+    label {
+        font-family: 'poppins';
+        font-weight: 800;
+        margin: 10px;
+    }
+
+    input {
+        width: 300px;
+        padding: 5px;
+        margin: 10px 0;
+        border: 2px solid $secondary-bg;
+        outline: none;
+        color: $secondary-bg;
+
+
+    }
+
+    button {
+        padding: 5px 10px;
+        margin-top: 10px;
+        color: $secondary-bg;
+    }
+
+    @include desktop() {
+        align-items: flex-start;
+        transform: translateX(0px);
+        label {
+            margin: 10px 0;
+        }
+        input {
+            width: calc(95vw - 10px);
+            padding: 10px 0;
+        }
+        div {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+    }
+}
+
+.right {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px;
+
+    label {
+        font-family: 'poppins';
+        margin: 10px;
+        font-weight: 800;
+    }
+
+    textarea {
+        width: 100%;
+        margin: 10px;
+        padding: 5px;
+        border: 2px solid $secondary-bg;
+        outline: none;
+        color: $secondary-bg;
+        resize: none;
+    }
+    @include tablet() {
+            flex-direction: column;
+        label {
+            margin: 0px;
+        }
+        textarea {
+            margin: 10px 0;
+            width: calc(95vw - 10px);
+
+        }
+    }
+    @include desktop() {
+        flex-direction: column;
+        label {
+            margin: 0px;
+        }
+        textarea {
+            margin: 10px 0;
+            width: calc(95vw - 10px);
+
+        }
+    }
+}

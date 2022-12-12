@@ -1,9 +1,6 @@
-@import "mixins";
+@use "./mixins" as *;
+@use './colors' as *;
 
-$bg-color: #333;
-$best-seller-bg: rgb(230, 168, 54);
-$best-seller-bg-light: rgba(230, 168, 54, 0.5);
-$bg-color: #add8e6;
 
 .bigContainer {
     display: flex;
@@ -25,7 +22,7 @@ $bg-color: #add8e6;
     @include clamp-font(12px, 1.2rem);
     font-weight: 600;
     color: #fff;
-    background-color: $best-seller-bg;
+    background-color: $secondary-bg;
     margin: 5px 0;
     text-align: center;
 }
@@ -49,7 +46,7 @@ $bg-color: #add8e6;
             position: absolute;
             top: 0;
             left: 0;
-            background-color: $best-seller-bg;
+            background-color: $secondary-bg;
             width: 30px;
             color: white;
             z-index: 1;
@@ -68,7 +65,7 @@ $bg-color: #add8e6;
             text-transform: capitalize;
             padding: 0 5px;
             margin: 0;
-            background-color: $best-seller-bg;
+            background-color: $secondary-bg;
         }
 
         img {
@@ -99,7 +96,7 @@ $bg-color: #add8e6;
             position: absolute;
             top: 0;
             left: 0;
-            background-color: $best-seller-bg;
+            background-color: $secondary-bg;
             width: 30px;
             color: white;
             z-index: 1;
@@ -118,7 +115,7 @@ $bg-color: #add8e6;
             text-transform: capitalize;
             padding: 0 5px;
             margin: 0;
-            background-color: $best-seller-bg;
+            background-color: $secondary-bg;
         }
 
         img {

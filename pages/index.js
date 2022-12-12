@@ -2,6 +2,7 @@ import style from '../styles/Home.module.scss'
 import Link from 'next/link'
 import HeroStyled from '../Components/HeroStyled'
 import Cards from '../Components/Cards'
+import Email from '../Components/email'
 
 export default function Home({spareParts, bestseller,custompcandrepair,antivirus}) {
   const welcomeText = "Christmas offers"
@@ -13,6 +14,8 @@ export default function Home({spareParts, bestseller,custompcandrepair,antivirus
         <HeroStyled />
         <h3 className={style.h3}>Best sellers in Accessories</h3>
         <Cards cardsToDisplay={bestseller} showRank={true} />
+        <h3 className={style.h3}>Contact Us</h3>
+        <Email/>
         <h3 className={style.h3}>Custom PC Built and Repair</h3>
         <Cards cardsToDisplay={custompcandrepair} smallSquare={true} order={1}/>
         <h3 className={style.h3}>Protect your PC against Malware and Virus</h3>
