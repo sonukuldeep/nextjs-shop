@@ -22,13 +22,35 @@
     padding: 5px 10px;
     border-radius: 8px;
     text-transform: capitalize;
+
+}
+
+.alternate:nth-child(even) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.alternate:nth-child(odd) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px 0;
 }
 
 .feature {
     width: 90%;
     margin-top: 40px;
 }
-
+.contact {
+    box-shadow: 0 0 10px 2px #333;
+    margin: 10px;
+    h3, h4 {
+        text-align: center;
+        color: $primary-bg;
+    }
+}
 .h1 {
     font-size: larger;
     font-weight: 700;
@@ -41,8 +63,12 @@
     text-align: center;
 }
 
-.image_container {
+.image_container {}
 
+.logoImage {
+    width: 100px;
+    object-fit: cover;
+    margin: 0 5px;
 }
 
 .flex_center_center {

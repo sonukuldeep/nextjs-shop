@@ -1,0 +1,16 @@
+@use './colors' as *;
+
+.container {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3,h4,p {
+        color: $primary-bg;
+        text-align: center;
+    }
+    h4 {
+        text-decoration: underline;
+    }
+}

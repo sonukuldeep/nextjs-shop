@@ -25,6 +25,7 @@
     background-color: $secondary-bg;
     margin: 5px 0;
     text-align: center;
+    text-shadow: 2px 2px 5px #333;
 }
 
 .container {
@@ -71,6 +72,11 @@
         img {
             width: 100%;
             object-fit: contain;
+            transition: transform 0.2s ease-in;
+        }
+
+        img:hover {
+            transform: scale(1.05);
         }
     }
 }
@@ -122,6 +128,12 @@
             width: 70%;
             object-fit: contain;
             align-self: center;
+            transition: transform 0.2s ease-in;
+
+        }
+
+        img:hover {
+            transform: scale(1.05);
         }
     }
 }
@@ -129,25 +141,29 @@
 @include desktop() {
     .container {
         grid-template-columns: repeat(2, minmax(150px, 1fr));
+
         .card span:last-child {
-            
+
             @include clamp-font(12px, 0.8rem);
-            
+
         }
     }
 
     .smallContainer {
         grid-template-columns: repeat(1, minmax(150px, 1fr));
+
         .card span:last-child {
-            
+
             @include clamp-font(12px, 0.8rem);
-            
+
         }
+
         .card img {
             width: 50%;
         }
     }
+
     .plankCard {
-            @include clamp-font(12px, 0.8rem);
+        @include clamp-font(12px, 0.8rem);
     }
 }
