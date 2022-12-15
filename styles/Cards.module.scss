@@ -22,10 +22,12 @@
     @include clamp-font(12px, 1.2rem);
     font-weight: 600;
     color: #fff;
-    background-color: $secondary-bg;
+    background-image: url(/plank-card-bg.avif);
+    background-position: bottom right;
     margin: 5px 0;
     text-align: center;
     text-shadow: 2px 2px 5px #333;
+
 }
 
 .container {
