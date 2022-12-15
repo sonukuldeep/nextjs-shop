@@ -2,7 +2,7 @@ import style from '../styles/Home.module.scss'
 import Link from 'next/link'
 import HeroStyled from '../Components/HeroStyled'
 import Cards from '../Components/Cards'
-import Email from '../Components/email'
+import Email from '../Components/Email'
 
 export default function Home({spareParts, bestseller,custompcandrepair,antivirus}) {
   const welcomeText = "Christmas offers"
