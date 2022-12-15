@@ -73,12 +73,14 @@
             width: 100%;
             object-fit: contain;
             transition: transform 0.2s ease-in;
+
         }
 
         img:hover {
             transform: scale(1.05);
         }
     }
+
 }
 
 .smallContainer {
@@ -129,11 +131,16 @@
             object-fit: contain;
             align-self: center;
             transition: transform 0.2s ease-in;
-
         }
 
         img:hover {
             transform: scale(1.05);
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 }

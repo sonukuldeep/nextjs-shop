@@ -3,6 +3,8 @@
 
 .container {
     margin: 5px;
+    container-type: inline-size;
+    container-name: form-container;
 }
 
 .form {
@@ -22,21 +24,23 @@
     align-items: flex-end;
     // margin-right: 80px;
     margin: 10px 80px 10px 10px;
+    // overflow: hidden;
 
     label {
         font-family: 'poppins';
         font-weight: 800;
-        margin: 10px;
+        margin: 10px 0;
+        margin-right: 10px;
     }
 
     input {
         width: 300px;
         padding: 5px;
-        margin: 10px 0;
+        margin: 10px 0 10px 0;
         border: 2px solid $secondary-bg;
         outline: none;
         color: $secondary-bg;
-
+        max-width: 450px;
 
     }
 
@@ -54,14 +58,17 @@
     }
 
     @include desktop() {
-        align-items: flex-start;
+        // align-items: center;
         transform: translateX(0px);
+        margin: auto;
         label {
             margin: 10px 0;
+            
         }
         input {
-            width: calc(95vw - 10px);
+            width: calc(95vw - 90px);
             padding: 10px 0;
+            margin-left: 0;
         }
         div {
             display: flex;
@@ -75,15 +82,18 @@
 .right {
     display: flex;
     align-items: flex-start;
+    flex-direction: column;
     margin: 10px;
+    margin-right: 20px;
 
     label {
         font-family: 'poppins';
-        margin: 10px;
+        margin: 0 10px;
         font-weight: 800;
     }
 
     textarea {
+        // align-self: center;
         width: 100%;
         max-width: 450px;
         margin: 10px;
@@ -99,20 +109,55 @@
             margin: 0px;
         }
         textarea {
-            margin: 10px 0;
+            margin: 10px 10px 0 0;
             width: calc(95vw - 10px);
-
+            // background-color: antiquewhite;
         }
     }
     @include desktop() {
         flex-direction: column;
+        margin: auto;
         label {
             margin: 0px;
         }
         textarea {
+            align-self: center;
             margin: 10px 0;
-            width: calc(95vw - 10px);
+            width: calc(95vw - 90px);
 
         }
+        
     }
 }
+
+@container form-container (max-width: 600px) {
+    .form {
+
+        // grid-template-columns: 1fr;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .left {
+            margin: auto;
+        }
+        div {
+            display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        }
+        .right {
+            margin-top:5px;
+        }
+    }
+
+}
+
+// @media (max-width: 1200px ){
+//     .form {
+//         grid-template-columns: 1fr;
+
+//     }
+// }
