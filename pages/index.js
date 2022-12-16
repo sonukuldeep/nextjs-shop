@@ -1,11 +1,31 @@
 import style from '../styles/Home.module.scss'
-import Link from 'next/link'
 import HeroStyled from '../Components/HeroStyled'
 import Cards from '../Components/Cards'
 import Email from '../Components/Email'
+import { useEffect,useContext } from 'react'
+import ScrollContext from '../Components/ScrollContext'
 
 export default function Home({spareParts, bestseller,custompcandrepair,antivirus}) {
   const welcomeText = "Christmas offers"
+  const {scrollY, setScrollY} = useContext(ScrollContext)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+    
+  }, []);
+  
+  useEffect(()=>{
+    window.scrollTo(0,scrollY)
+  },[])
 
   return (
     <div >

@@ -2,7 +2,7 @@ import style from '../styles/Cards.module.scss'
 import Link from 'next/link'
 
 const Cards = ({ cardsToDisplay, showRank = false, smallSquare = false, order = 0 }) => {
-
+  const customRepair = ['17','18','19','20','21','22','23','24']
   return (
     <div className={smallSquare ? `${style.bigContainer_reverse}` : `${style.bigContainer}`}>
       {order === 1 ? <div className={style.plankCard}>
@@ -13,7 +13,7 @@ const Cards = ({ cardsToDisplay, showRank = false, smallSquare = false, order = 
           <p>Whatsapp number: 8270333710</p>
       </div> : ""}
       <div className={!smallSquare ? `${style.container}` : `${style.smallContainer}`}>
-        {cardsToDisplay.map((card, index) => <div className={style.card} key={index}>{showRank ? <span>#{index + 1}</span> : ""}<Link href={`/products/${card.id}`}><img src={card.img} alt="card" /></Link><span>{card.excerpt}</span></div>)}
+        {cardsToDisplay.map((card, index) => <div className={style.card} key={index}>{showRank ? <span>#{index + 1}</span> : ""} {customRepair.includes(card.id) ? <img src={card.img} alt="card" /> : <Link href={`/products/${card.id}`}><img src={card.img} alt="card" /></Link>}<span>{card.excerpt}</span></div>)}
       </div>
       {order === 2 ? <div className={style.plankCard}>
         <p className={style.quote}>Online delivery within 30min</p>

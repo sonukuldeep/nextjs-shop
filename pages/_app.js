@@ -1,10 +1,13 @@
 import '../styles/globals.css'
 import Layout from '../Components/Layout'
+import ScrollState from '../Components/ScrollState'
 
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
-      <Component {...pageProps} />
+      <ScrollState>
+        <Component {...pageProps} />
+      </ScrollState>
     </Layout>
   )
 }
