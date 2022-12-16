@@ -35,7 +35,19 @@ const product = ({ data }) => {
 
 export default product
 
-export const getServerSideProps = async (context) => {
+// export const getServerSideProps = async (context) => {
+
+//     const url = `http://localhost:3000/api/product/${context.params.id}`
+//     const res = await fetch(url)
+//     const data = await res.json()
+//     return {
+//         props: {
+//             data
+//         }
+//     }
+// }
+
+export const getStaticProps = async (context) => {
 
     const url = `http://localhost:3000/api/product/${context.params.id}`
     const res = await fetch(url)
@@ -45,4 +57,17 @@ export const getServerSideProps = async (context) => {
             data
         }
     }
+}
+
+export const getStaticPaths = async () => {
+        const url = `http://localhost:3000/api/products`
+        const res = await fetch(url)
+        const data = await res.json()
+        const ids = data.map(item=>item.id)
+        const paths = ids.map(id=>({params: {id: id}}))
+        return {
+                paths,
+                fallback: false,
+        }
+    
 }

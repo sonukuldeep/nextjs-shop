@@ -7,7 +7,8 @@ import { bestSellers } from '../../../data/bestSeller'
 import { customPCAndRepair } from '../../../data/customPCAndRepair'
 
 export default function handler(req,res) {
-    const allProducts = [...spareParts,...antivirus,...bestSellers,...customPCAndRepair]
+    const allProducts = [...spareParts,...bestSellers]
+    // const allProducts = [...spareParts,...antivirus,...bestSellers,...customPCAndRepair]
     res.status(200).json(allProducts)
 }
 
