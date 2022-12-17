@@ -4,6 +4,8 @@ import Cards from '../Components/Cards'
 import Email from '../Components/Email'
 import { useEffect,useContext } from 'react'
 import ScrollContext from '../Components/ScrollContext'
+import { spareParts } from '../data/spareParts'
+import { bestSellers } from '../data/bestSeller'
 
 export default function Home({spareParts, bestseller,custompcandrepair,antivirus}) {
   const welcomeText = "Christmas offers"
@@ -70,8 +72,11 @@ export const getStaticProps = async () => {
 
 
 async function fetchData(url) {
-  const baseurl = `http://localhost:3000/api/products/${url}`
-  const res = await fetch(baseurl)
-  const result = await res.json()
+  const result = [...spareParts,...bestSellers]
+  // const result = allData.map(item=>)
+  // const baseurl = `http://localhost:3000/api/products/${url}`
+  // const res = await fetch(baseurl)
+  // const result = await res.json()
+  // console.log(result)
   return result
 }
