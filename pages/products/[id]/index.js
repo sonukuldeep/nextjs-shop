@@ -1,4 +1,5 @@
-import { useRouter } from 'next/router'
+import { spareParts } from '../../../data/spareParts'
+import { bestSellers } from '../../../data/bestSeller'
 import style from '../../../styles/PerProduct.module.scss'
 import Email from '../../../Components/Email'
 const product = ({ data }) => {
@@ -48,10 +49,10 @@ export default product
 // }
 
 export const getStaticProps = async (context) => {
-
-    const url = `http://localhost:3000/api/product/${context.params.id}`
-    const res = await fetch(url)
-    const data = await res.json()
+    const allData = [...spareParts,...bestSellers]
+    const search_id = context.params.id
+    const rdata = allData.filter(item=>item.id === search_id)
+    const data = rdata[0]
     return {
         props: {
             data
@@ -60,14 +61,12 @@ export const getStaticProps = async (context) => {
 }
 
 export const getStaticPaths = async () => {
-        const url = `http://localhost:3000/api/products`
-        const res = await fetch(url)
-        const data = await res.json()
-        const ids = data.map(item=>item.id)
-        const paths = ids.map(id=>({params: {id: id}}))
-        return {
-                paths,
-                fallback: false,
-        }
-    
+    const allData = [...spareParts,...bestSellers]
+    const ids = allData.map(item => item.id)
+    const paths = ids.map(id => ({ params: { id: id } }))
+    return {
+        paths,
+        fallback: false,
+    }
+
 }
