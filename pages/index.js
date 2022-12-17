@@ -6,6 +6,8 @@ import { useEffect,useContext } from 'react'
 import ScrollContext from '../Components/ScrollContext'
 import { spareParts } from '../data/spareParts'
 import { bestSellers } from '../data/bestSeller'
+import { customPCAndRepair } from '../data/customPCAndRepair'
+import { antivirus } from '../data/antivirus'
 
 export default function Home({spareParts, bestseller,custompcandrepair,antivirus}) {
   const welcomeText = "Christmas offers"
@@ -56,27 +58,27 @@ export default function Home({spareParts, bestseller,custompcandrepair,antivirus
     //id 25-36 spare parts
 
 export const getStaticProps = async () => {
-    const spareParts = await fetchData("spareparts")
-    const antivirus = await fetchData("antivirus")
-    const bestseller = await fetchData("bestseller")
-    const custompcandrepair = await fetchData("custompcandrepair")
+    // const spareParts = await fetchData("spareparts")
+    // const antivirus = await fetchData("antivirus")
+    // const bestseller = await fetchData("bestseller")
+    // const custompcandrepair = await fetchData("custompcandrepair")
     return {
       props: {
-        antivirus,
-        bestseller,
-        custompcandrepair,
-        spareParts,
+        antivirus: antivirus,
+        bestseller: bestSellers,
+        custompcandrepair: customPCAndRepair,
+        spareParts: spareParts,
       }
     }
 }
 
 
-async function fetchData(url) {
-  const result = [...spareParts,...bestSellers]
+// async function fetchData(url) {
+  // const result = [...spareParts,...bestSellers]
   // const result = allData.map(item=>)
   // const baseurl = `http://localhost:3000/api/products/${url}`
   // const res = await fetch(baseurl)
   // const result = await res.json()
   // console.log(result)
-  return result
-}
+  // return result
+// }
