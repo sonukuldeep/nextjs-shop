@@ -37,6 +37,7 @@ export default function Home({ spareParts, bestseller, custompcandrepair, antivi
         <h1 className={style.h1}>{welcomeText}</h1>
         <HeroStyled />
         <div className={style.brands}>
+          <h3 className={style.h3}>Shop from a range of Brands</h3>
           <img src='/brands.png' />
         </div>
         <h3 className={style.h3}>Best sellers in Accessories</h3>
